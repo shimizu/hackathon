@@ -6,6 +6,10 @@ machine:
 dependencies:
   override:
     - pip install awscli
+
+test:
+  override:
+  - exit 0  
   
 deployment:
   demo:
