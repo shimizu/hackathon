@@ -8,7 +8,8 @@ dependencies:
     - pip install awscli
 test:
   override:
-
+  -
+  
 deployment:
   demo:
     branch: demo
