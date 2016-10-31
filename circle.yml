@@ -28,6 +28,7 @@ deployment:
       - aws configure set aws_access_key_id $DEV_AWS_ID
       - aws configure set aws_secret_access_key $DEV_AWS_SECRET
       - aws configure set region "ap-northeast-1"
-      - aws s3 sync content/ s3://shimizu-test-s3/publish  --delete > s3upload.log
+      - aws s3 sync content
+      / s3://shimizu-test-s3/publish  --delete > s3upload.log
       - cat s3upload.log
       
