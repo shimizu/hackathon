@@ -1,0 +1,19 @@
+{
+  "name": "hacktohon",
+  "version": "1.0.0",
+  "description": "ハッカソン用リポジトリです。",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shimizu/hackathon.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shimizu/hackathon/issues"
+  },
+  "homepage": "https://github.com/shimizu/hackathon#readme"
+}
