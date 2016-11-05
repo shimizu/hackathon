@@ -4,7 +4,6 @@ var sourcemaps = require('gulp-sourcemaps');
 var pleeease = require('gulp-pleeease');
 var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
-var imagemin = require('gulp-imagemin');
 var browserSync = require('browser-sync');
 var reload      = browserSync.reload;
 var plumber = require("gulp-plumber");
