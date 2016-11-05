@@ -1,0 +1,117 @@
+@charset "utf-8";
+// common window-size set
+// ----------------------------------------------
+@mixin mq-xxxs {
+	@media (min-width: ($breakpoint_xxxs)) {@content;}
+}
+@mixin mq-xxs {
+	@media (min-width: ($breakpoint_xxs)) {@content;}
+}
+@mixin mq-xs {
+	@media (min-width: ($breakpoint_xs)) {@content;}
+}
+@mixin mq-s {
+	@media (min-width: ($breakpoint_s)) {@content;}
+}
+@mixin mq-m {
+	@media (min-width: ($breakpoint_m)) {@content;}
+}
+@mixin mq-l {
+	@media (min-width: ($breakpoint_l)) {@content;}
+}
+@mixin mq-xl {
+	@media (min-width: ($breakpoint_xl)) {@content;}
+}
+@mixin mq-xxl {
+	@media (min-width: ($breakpoint_xxl)) {@content;}
+}
+@mixin mq-xxxl {
+	@media (min-width: ($breakpoint_xxxl)) {@content;}
+}
+@mixin mq($size) {
+	@media (min-width: $size) {@content;}
+}
+@mixin mq-retina {
+	@media (-webkit-min-device-pixel-ratio: 2), (min-device-pixel-ratio: 2) {@content;}
+}
+
+// ベンダープレフィックス
+// -------------------------------------
+// サポートブラウザに応じてプレフィックスを自動で追加
+@mixin prefix($property, $value) {
+	@each $prefix in $prefix_list {
+		#{$prefix}#{$property}: $value;
+	}
+}
+
+// 慣性スクロール
+// -------------------------------------
+// 要素の中に慣性スクロールを適用する
+@mixin overflow-scroll {
+  overflow: scroll;
+  -webkit-overflow-scrolling: touch;
+}
+
+// text-rendering
+// -------------------------------------
+@mixin smoothing {
+   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+           text-rendering: optimizeLegibility;
+}
+
+// clearfix
+// -------------------------------------
+@mixin clearfix() {
+    &:after {
+	    content: ' ';
+	  	display: block;
+	    clear: both;
+			height: 0;
+			visibility: hidden;
+    }
+}
+
+// font-weight bold mixin
+// ----------------------------------------------
+// フォント指定時に使用する。type=gothicかminchoか・weight=boldかnormalか・smoothing=font-smoothingを使うか否かtrue/falseで指定
+@mixin font-family-japan($weight:normal, $smoothing:true) {
+		font-family: $default_font;
+		font-weight: $weight;
+
+	@if $smoothing == true {
+      @include smoothing;
+    }
+}
+
+// 数字や見出しに使用する欧文書体の指定
+@mixin font-family-euro($weight:normal, $smoothing:true) {
+	@if $weight == "bold" {
+		font-family: $euro_font;
+		font-weight: $weight;
+	} @else {
+		font-family: $euro_font;
+	}
+	@if $smoothing == true {
+      @include smoothing;
+    }
+}
+
+// common mixin
+//----------------------------------------------
+//absolute position
+@mixin abs-position ($top: auto, $right: auto, $bottom: auto, $left: auto) {
+	position: absolute;
+	top: $top;
+	right: $right;
+	bottom: $bottom;
+	left: $left;
+}
+
+//pseudo base 擬似要素生成
+@mixin pseudo-element($width: 0, $height: 0) {
+	content: '';
+	display: block;
+	width: $width;
+	height: $height;
+}

@@ -1,0 +1,95 @@
+@charset "utf-8";
+// =================================================
+//
+//	value定義用scss
+//
+//=================================================
+
+// =============================================
+//
+// trigger
+//
+// =============================================
+// ベンダープレフィックス
+$prefix_list: -webkit-, -moz-, -ms-, -o-, '';
+
+// color
+//----------------------------------------------
+
+//nikkei
+$color_nikkei:       #0A385B !default; //nikkei_blue
+
+//basic
+$color_background:   #f8f8f8 !default; //section_background
+$color_text:         #3a4041 !default; //本文
+$color_main:         #3dc185 !default; //基本メインカラー
+$color_accent:       #ff8737 !default; //アクセントカラー
+
+//link
+$color_link:         #0066ff !default;
+$color_link_hover:   #0000ff !default;
+$color_link_visited: #3399ff !default;
+$color_link_active:  #0000ff !default;
+$color_link_focus:   #0000ff !default;
+
+// social
+$color_twitter:      #55acee !default;
+$color_facebook:     #3b5998 !default;
+
+// chart
+$color_chart1:       #eb174a !default;
+$color_chart2:       #eb4a17 !default;
+$color_chart3:       #eb8917 !default;
+$color_chart4:       #baeb17 !default;
+$color_chart5:       #6eeb17 !default;
+$color_chart6:       #17eb40 !default;
+$color_chart7:       #17eb8c !default;
+$color_chart8:       #17beeb !default;
+$color_chart9:       #1772eb !default;
+$color_chart10:      #1c17eb !default;
+
+
+// media-query
+//----------------------------------------------
+
+$breakpoint_xxxs:               375px;
+$breakpoint_xxs:                481px;
+$breakpoint_xs:                 601px;
+$breakpoint_s:                  769px;
+$breakpoint_m:                  961px;
+$breakpoint_l:                 1025px;
+$breakpoint_xl:                1281px;
+$breakpoint_xxl:               1441px;
+$breakpoint_xxxl:              1921px;
+
+// font-set
+//----------------------------------------------
+$default_font: "-apple-system", BlinkMacSystemFont, "Helvetica Neue", 'Hiragino Kaku Gothic ProN', "Yu Gothic", YuGothic, Verdana, Meiryo, "M+ 1p", sans-serif;
+
+// font-size
+//----------------------------------------------
+
+$size_xxs:              1rem !default; // 基準サイズ
+$size_xs:             1.2rem !default; // キャプション：12px
+$size_s:              1.3rem !default; // キャプション：13px
+$size_m:              1.6rem !default; // 本文：16px
+$size_l:              1.8rem !default; // 見出し h4：18px
+$size_xl:             2.4rem !default; // 見出し h3：24px
+$size_xxl:            3.8rem !default; // 見出し h2：38px
+
+
+// element size
+//----------------------------------------------
+
+$width_xxs:                    21.25%; // 1/4 margin5%
+$width_xs:                        30%; // 1/3 margin5%
+$width_s:                       47.5%; // 1/2 margin5%
+$width_m:                         50%; // 1/2
+$width_l:                         68%;
+$width_xl:                    83.333%;
+$width_xxl:                       90%;
+$width_full:                     100%;
+
+
+//
+//----------------------------------------------
