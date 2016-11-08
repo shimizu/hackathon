@@ -2,16 +2,16 @@
 //----------------------------------------------
 // 欧文書体のimportと変数指定
 //----------------------------------------------
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700')        ; //Open Sans
+// @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700')        ; //Open Sans
 // @import url('https://fonts.googleapis.com/css?family=Roboto:400,700')           ; //Roboto
-// @import url('https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700') ; //Roboto Condensed
+@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700') ; //Roboto Condensed
 // @import url('https://fonts.googleapis.com/css?family=Oswald:400,700')           ; //Oswald
 // @import url('https://fonts.googleapis.com/css?family=Lato:400,700')             ; //Lato
 // @import url('https://fonts.googleapis.com/css?family=Fjalla+One')               ; //Fjalla One
 
-$euro_font: 'Open Sans', sans-serif        ; //Open Sans
+// $euro_font: 'Open Sans', sans-serif        ; //Open Sans
 // $euro_font: 'Roboto', sans-serif           ; //Roboto
-// $euro_font: 'Roboto Condensed', sans-serif ; //Roboto Condensed
+$euro_font: 'Roboto Condensed', sans-serif ; //Roboto Condensed
 // $euro_font: 'Oswald', sans-serif           ; //Oswald
 // $euro_font: 'Lato', sans-serif             ; //Lato
 // $euro_font: 'Fjalla One', sans-serif       ; //Fjalla One
