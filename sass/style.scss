@@ -273,4 +273,9 @@ ul {
             @include prefix(transform, rotate(45deg));
         }
     }
+    &__data {
+        width: 83.333%;
+        max-width: 960px;
+        margin: 260px auto 0;
+    }
 }

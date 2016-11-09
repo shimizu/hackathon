@@ -3,12 +3,33 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/d3/4.1.1/d3.min.js"></script>
     <script src="js/resas_api.js"></script>
 </head>
-<h1>詳細表示ページ</h1>
 
+<!-- header -->
+<header class="header">
+    <div class="header__logo">
+        <h1 class="title main--title"><img src="img/logo_text.svg" alt="さらりーまっぷ！"></h1>
+        <p class="arow"></p>
+    </div>
+    <div class="header__body">
+        <ul class="sns">
+            <li class="sns__child"><img src="img/icon_fb.png"></li>
+            <li class="sns__child"><img src="img/icon_tw.png"></li>
+        </ul>
+        <p class="text text--read">
+            <span class="text__body">あなたの地域毎の暮らしやすさを<br>「見える化」</span>
+            <span class="text__api">RESAS-API</span>
+        </p>
+    </div>
+</header>
 
-<span id="prefName"></span>
-<span id="sicName"></span>
-<span id="value"></span>万円
+<section class="main js-main">
+    <div class="main__data">
+        <h2>この地域であなたの想定年収は...</h2>
+        <span id="prefName"></span>
+        <span id="sicName"></span>
+        <span id="value"></span>万円
+    </div>
+</section>
 
 
 <script src="js/detail.js"></script>
