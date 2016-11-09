@@ -143,10 +143,28 @@ ul {
 
     &--read {
         font-size: 18px;
-        @include font-family-japan(bold, true);
-    }
-    &--api {
-        font-size: 12px;
+        position: relative;
+
+        .text__body {
+            background: $color_background;
+            padding-right: 0.5em;
+            display: inline-block;
+            @include font-family-japan(bold, true);
+        }
+        .text__api {
+            font-size: 12px;
+            text-align: right;
+            @include abs-position(0,0,auto,0);
+
+        }
+
+        &:before {
+            @include pseudo-element(100%, 1px);
+            background: $color_text;
+            @include abs-position(0,0,auto,0);
+            margin-top: 0.7em;
+            z-index: -1;
+        }
     }
 }
 
