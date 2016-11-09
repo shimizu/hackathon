@@ -4,7 +4,11 @@
   "description": "ハッカソン用リポジトリです。",
   "main": "index.js",
   "scripts": {
+<<<<<<< HEAD
     "start":"gulp",
+=======
+    "start": "gulp",
+>>>>>>> 4eeaafc73ae31a96fbbbe92e24e2a0f2d36d5272
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -26,5 +30,8 @@
     "gulp-sass": "^2.3.2",
     "gulp-sourcemaps": "^2.2.0",
     "gulp-uglify": "^2.0.0"
+  },
+  "dependencies": {
+    "gulp": "^3.9.1"
   }
 }
