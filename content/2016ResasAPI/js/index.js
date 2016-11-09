@@ -13,17 +13,7 @@ var index = {
     },
 
     setMapSize: function() {
-        var $mapBody = $('.map_body');
-        var mapwidth = $mapBody.width();
-        var mapheight = $mapBody.height();
-        console.log(mapwidth, mapheight);
 
-        var tgtX = (ww - mapwidth/2)/2
-        var tgtY = (wh - mapheight/2)/2
-
-        console.log(tgtX,tgtY);
-
-        //$('.map_body').attr('transform', 'translate(' + tgtX + ',' + tgtY + '),scale(.5)');
     },
 
     init: function () {
