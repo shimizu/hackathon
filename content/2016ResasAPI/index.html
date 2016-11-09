@@ -83,7 +83,7 @@
         <p class="text balloon__text">あなたのターンしたい地域は？</p>
 
         <div class="form-wrap form-wrap--active">
-            <form>
+            <form action="detail.html" method="get">
                 <select name="prefCode"> <!-- 後で地図に変える-->
                     <option value="1">北海道</option>
                     <option value="2">青森県</option>
@@ -148,14 +148,13 @@
                     <option value="13">70歳～</option>
                 </select>
 
-                <select>
-                    <option value="A">農業，林業</option>
+                <select name="sicCode">
+                    <option value="G">情報通信業</option>
                     <option value="B">漁業</option>
                     <option value="C">鉱業，採石業，砂利採取業</option>
                     <option value="D">建設業</option>
                     <option value="E">製造業</option>
                     <option value="F">電気・ガス・熱供給・水道業</option>
-                    <option value="G">情報通信業</option>
                     <option value="H">運輸業，郵便業</option>
                     <option value="I">卸売業，小売業</option>
                     <option value="J">金融業，保険業</option>
@@ -171,8 +170,8 @@
                     <option value="T">分類不能の産業</option>
                 </select>
 
-                <button id="send">送信</button>
-            </form>
+                <input type="submit" value="送信"></input>
+    </form>
         </div>
     </div>
 </section>
