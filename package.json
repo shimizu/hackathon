@@ -4,11 +4,7 @@
   "description": "ハッカソン用リポジトリです。",
   "main": "index.js",
   "scripts": {
-<<<<<<< HEAD
-    "start":"gulp",
-=======
     "start": "gulp",
->>>>>>> 4eeaafc73ae31a96fbbbe92e24e2a0f2d36d5272
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
