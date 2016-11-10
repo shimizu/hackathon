@@ -10,14 +10,22 @@ var index = {
     setMainHeight: function() {
         $('.js-main').height(wh);
     },
-
-    setMapSize: function() {
-
+    mapClickEvent: function() {
+        var $map = $('.main__map');
+        var $balloon =$('.main__balloon');
+        var $form = $('.form-wrap');
+        var defSize = $balloon.height();
+        $balloon.height(defSize);
+        $map.click(function(event) {
+            $balloon.height(wh/2 - 20);
+            $('.balloon__text').fadeOut('200');
+            $form.addClass('form-wrap--active');
+        });
     },
 
     init: function () {
         index.setMainHeight();
-        index.setMapSize();
+        index.mapClickEvent();
 	}
 }
 $(window).load(function () {

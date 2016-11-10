@@ -314,6 +314,8 @@ ul {
         @include abs-position(auto,0,0,0);
         margin: auto;
         z-index: 3;
+        height: auto;
+        @include prefix(transition, height .5s cubic-bezier(1,0, .25, 1));
 
         .balloon__text {
             text-align: center;
