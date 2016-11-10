@@ -229,7 +229,7 @@ ul {
         position: relative;
         width: calc(95% - 280px);
         margin: 40px 5% 0 auto;
-        z-index: 2;
+        z-index: 1;
     }
     @include clearfix;
 }
@@ -304,6 +304,9 @@ ul {
         width: 100%;
         @include abs-position(0,0,0,0);
         margin: auto;
+        //仮
+        width: 40%;
+        height: 464px;
     }
     &__balloon {
         width: 100%;
@@ -387,7 +390,7 @@ ul {
     width: 83.333%;
     max-width: 600px;
     color: $color_text;
-    margin: 0 auto;
+    margin: 2em auto 0;
 
     .sub-data__answer {
         font-size: 24px;
@@ -399,6 +402,7 @@ ul {
         width: 100%;
         border: 1px solid $color_text;
         padding: 0.5em;
+        margin-top: 1em;
 
         .table__ctg {
             padding: 0.5em;
