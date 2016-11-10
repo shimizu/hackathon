@@ -4,12 +4,19 @@
     <script src="js/resas_api.js"></script>
 </head>
 
+<p class="border-l"></p>
+<p class="border-r"></p>
 <!-- header -->
 <header class="header">
     <div class="header__logo">
-        <h1 class="title main--title"><img src="img/logo_text.svg" alt="さらりーまっぷ！"></h1>
+        <h1 class="title main--title">
+            <a href="index.html"><img src="img/logo_text.svg" alt="さらりーまっぷ！"></a>
+        </h1>
         <p class="arow"></p>
     </div>
+</header>
+
+<section class="main main--result">
     <div class="header__body">
         <ul class="sns">
             <li class="sns__child"><img src="img/icon_fb.png"></li>
@@ -20,14 +27,70 @@
             <span class="text__api">RESAS-API</span>
         </p>
     </div>
-</header>
-
-<section class="main js-main">
     <div class="main__data">
-        <h2>この地域であなたの想定年収は...</h2>
-        <span id="prefName"></span>
-        <span id="sicName"></span>
-        <span id="value"></span>万円
+        <div class="data__conditions">
+            <p class="data__conditions__child" id="prefName"></p>
+            <p class="data__conditions__child" id="sicName"></p>
+        </div>
+        <h2 class="data__answer">この地域であなたの想定年収は...</h2>
+        <p class="data__money"><span class="value" id="value"></span><span class="unit">万円</span></p>
+        <p class="data__money-img"><img src="img/money.png"></p>
+
+        <div class="main__sub-data">
+            <h3 class="sub-data__answer">あなたの業種の業績は...</h3>
+            <table class="sub-data__table">
+                <tbody>
+                    <tr>
+                        <td class="table__ctg">
+                            年間平均支出
+                        </td>
+                        <td class="table__value">
+                            000000
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="table__ctg">
+                            年間平均住民税
+                        </td>
+                        <td class="table__value">
+                            000000
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="table__ctg">
+                            有効求人倍率
+                        </td>
+                        <td class="table__value">
+                            00
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="table__ctg">
+                            起業のしやすさ
+                        </td>
+                        <td class="table__value">
+                            0
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="table__ctg">
+                            消費者物価指数
+                        </td>
+                        <td class="table__value">
+                            00.0
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="table__ctg">
+                            この地域で最も稼いでいる業種
+                        </td>
+                        <td class="table__value">
+                            〇〇業
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
 </section>
 

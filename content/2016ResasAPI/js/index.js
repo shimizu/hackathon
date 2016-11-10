@@ -8,8 +8,7 @@ var ww = $(window).width();
 var wh = $(window).height();
 var index = {
     setMainHeight: function() {
-        var mainBorderWidth = 40
-        $('.js-main').height(wh -  mainBorderWidth);
+        $('.js-main').height(wh);
     },
 
     setMapSize: function() {
