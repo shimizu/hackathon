@@ -17,7 +17,7 @@ var index = {
         var defSize = $balloon.height();
         $balloon.height(defSize);
         $map.click(function(event) {
-            $balloon.height(wh/2 - 20);
+            $balloon.height(wh/2 - 40);
             $('.balloon__text').fadeOut('200');
             $form.addClass('form-wrap--active');
         });
@@ -26,6 +26,7 @@ var index = {
     init: function () {
         index.setMainHeight();
         index.mapClickEvent();
+        //index.mapZoom();
 	}
 }
 $(window).load(function () {
