@@ -11,7 +11,7 @@
     }
 
     const key ="laIipCFynb2CgaT7SnJ1c1QxN0LCB9b31AvLM5nO"
-    const dataDir = "../data/"
+    const dataDir = "./data/"
 
     const param = {
         prefCode:getParameterByName('prefCode'),
