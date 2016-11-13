@@ -11,26 +11,28 @@
         simcCode:"-"        
     }
     
-    var api = RESASAPI();
+    var api = RESASAPI()
+    api.apikey(key)     
 
-    loadPerYear()
+
+    loadWages()
+    loadTaxes()
     
     
     
     
     //一人当たり賃金データのロード
-    function loadPerYear() {
+    function loadWages() {
+        var api = RESASAPI()
         api.apikey(key)     
-        api.type("一人当たり賃金")
-    
-        api.param(param)
-         
-        console.log(api.url())
+        api.type("一人当たり賃金")    
+        api.param(param)         
     
         api.on('load', function(data) {
-            var valueArray = data.result.data.map(function(d){ return d.value })
+            var valueArray = data.result.data.map(function(d){ return d })
+                .filter(function(d){ return d.year == "2014" })
             
-            var value = valueArray[0]
+            var value = valueArray[0].value
             console.log(value)
             var prefName = data.result.prefName
             var sicName = data.result.sicName
@@ -42,6 +44,26 @@
          
         api.send()        
     }
+    
+    //住民税表示
+    function loadTaxes() {
+        var api = RESASAPI()
+        api.apikey(key)     
+        api.type("一人当たり地方税")    
+        api.param(param)         
+        console.log(api.url())
+        api.on('load', function(data) {
+            
+            var valueArray = data.result.data.map(function(d){ return d })
+                .filter(function(d){ return d.year == "2014" })
+                        
+            d3.select("#taxes").text(valueArray[0].value * 1000 / 10000 )
+        })
+         
+        api.send()        
+        
+    }
+    
     
     function getParameterByName(name, url) {
         if (!url) {
