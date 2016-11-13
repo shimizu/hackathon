@@ -10,8 +10,7 @@
         return d
     }
 
-    // const key ="laIipCFynb2CgaT7SnJ1c1QxN0LCB9b31AvLM5nO"
-    const key ="8hBhzQ1tXR7BrFdZPj5gV8b64BuQVhpq64h2afO5"
+    const key ="laIipCFynb2CgaT7SnJ1c1QxN0LCB9b31AvLM5nO"
     const dataDir = "./data/"
 
     const param = {
@@ -33,6 +32,7 @@
     loadRent()
     loadRegular()
     loadBlack()
+    loadCPI()
 
     //一人当たり賃金データのロード
     function loadWages() {
@@ -108,6 +108,21 @@
     }
 
 
+    //CPI
+    function loadCPI() {
+        d3.tsv(dataDir+"cpi.tsv", cast, function(d){
+            var nested = d3.nest()
+                .rollup(function(d){ return d[0] })
+                .key(function(d){ return d["県コード"]})
+                .map(d)
+
+            var value = (nested.get(param.prefCode))["消費者物価指数"]
+            d3.select("#cpi").text(value)
+
+        })
+    }
+
+
     //年間支出
     function loadSpend() {
         d3.tsv(dataDir+"kakei.tsv", cast, function(d){
@@ -133,7 +148,7 @@
                 .map(d)
 
             var value = (nested.get(param.prefCode))["借家平均家賃"]
-            d3.select("#rent").text(value / 10000)
+            d3.select("#rent").text(d3.format(".2f")(value / 10000))
 
             var sorted_data = d.sort(function(a, b){
               var ad = 0, bd = 0;
@@ -143,7 +158,7 @@
             });
 
             var rank = findWithAttr(sorted_data, '県コード', parseInt(param.prefCode)) + 1;
-            console.log('借家平均家賃: '+rank);
+            console.log(rank);
             d3.select("#rent_rank").text(rank + ' / 47');
         })
     }
@@ -182,6 +197,7 @@
 
             var value = (nested.get(param.prefCode))["ブラック度"]
             d3.select("#black").text(d3.format(".2f")(value))
+
 
             var sorted_data = d.sort(function(a, b){
               var ad = 0, bd = 0;
