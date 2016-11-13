@@ -67,15 +67,18 @@ var index = {
         var $form = $('.form-wrap');
         var defSize = $balloon.height();
         $balloon.height(defSize);
+
         $map.click(function(event) {
             $balloon.height(wh/2 - 40);
             $('.balloon__text').fadeOut('200');
             $form.addClass('form-wrap--active');
+            $zoomOff.fadeIn(200);
         });
         $zoomOff.click(function(event) {
             $balloon.height(defSize);
             $('.balloon__text').fadeIn('200');
             $form.removeClass('form-wrap--active');
+            $zoomOff.fadeOut(200);
         });
     },
     mapZoom: function () {
