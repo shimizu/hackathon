@@ -144,6 +144,7 @@
 
             var rank = findWithAttr(sorted_data, '県コード', parseInt(param.prefCode)) + 1;
             console.log('借家平均家賃: '+rank);
+            d3.select("#rent_rank").text(rank + ' / 47');
         })
     }
 
@@ -166,6 +167,7 @@
             });
 
             var rank = findWithAttr(sorted_data, '県コード', parseInt(param.prefCode)) + 1;
+            d3.select("#regular_rank").text(rank + ' / 47');
             console.log('非正規雇用比率: '+rank);
         })
     }
@@ -179,7 +181,7 @@
                 .map(d)
 
             var value = (nested.get(param.prefCode))["ブラック度"]
-            d3.select("#black > value__unit").text(d3.format(".2f")(value))
+            d3.select("#black").text(d3.format(".2f")(value))
 
             var sorted_data = d.sort(function(a, b){
               var ad = 0, bd = 0;
@@ -190,7 +192,7 @@
 
             var rank = findWithAttr(sorted_data, '県コード', parseInt(param.prefCode)) + 1;
             console.log('ブラック度: '+rank);
-            d3.select("#black").text(d3.format(".2f")(value))
+            d3.select("#black_rank").text(rank + ' / 47');
         })
     }
 
