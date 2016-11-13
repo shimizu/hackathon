@@ -30,8 +30,8 @@
     loadFoundation()
     loadSpend()
     loadRent()
-
-
+    loadRegular()
+    loadBlack()
 
     //一人当たり賃金データのロード
     function loadWages() {
@@ -143,6 +143,34 @@
 
             var rank = findWithAttr(sorted_data, '県コード', parseInt(param.prefCode)) + 1;
             console.log(rank);
+        })
+    }
+
+    //正規雇用比率
+    function loadRegular() {
+        d3.tsv(dataDir+"jobs.tsv", cast, function(d){
+            var nested = d3.nest()
+                .rollup(function(d){ return d[0] })
+                .key(function(d){ return d["県コード"]})
+                .map(d)
+
+            var value = (nested.get(param.prefCode))["非正規雇用比率"]
+            d3.select("#regular").text(d3.format(".2f")(value))
+
+        })
+    }
+
+    //正規雇用比率
+    function loadBlack() {
+        d3.tsv(dataDir+"black.tsv", cast, function(d){
+            var nested = d3.nest()
+                .rollup(function(d){ return d[0] })
+                .key(function(d){ return d["県コード"]})
+                .map(d)
+
+            var value = (nested.get(param.prefCode))["ブラック度"]
+            d3.select("#black").text(d3.format(".2f")(value))
+
         })
     }
 
