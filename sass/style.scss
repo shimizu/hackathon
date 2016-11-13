@@ -482,8 +482,9 @@ input[type="search"]::-webkit-search-decoration {
             .table__ctg {
                 padding: 0.3em;
                 color: $color_text;
-                font-size: 16px;
+                font-size: 15px;
                 @include font-family-japan(bold,true);
+                height: 58px;
             }
             .table__value {
                 padding: 0.3em;
@@ -492,6 +493,16 @@ input[type="search"]::-webkit-search-decoration {
                 color: $color_main;
                 letter-spacing: .05em;
                 @include font-family-euro(normal,false);
+
+                .value__unit {
+                    font-size: 14px;
+                    display: inline-block;
+                }
+                .value__rank {
+                    font-size: 13px;
+                    margin-top: 0.5em;
+                    letter-spacing: 0;
+                }
             }
         }
     }
@@ -591,24 +602,12 @@ input[type="search"]::-webkit-search-decoration {
     }
 
     .select {
-        width: 40%;
+        width: 47.5%;
         margin-right: 5%;
         float: left;
 
         &:last-child {
-            width: 55%;
             margin-right: 0;
-
-            .select__box {
-                width: 49%;
-                float: left;
-                margin-right: 2%;
-
-                &:last-child {
-                    margin-right: 0;
-                }
-                @include clearfix;
-            }
         }
     }
     @include clearfix;
