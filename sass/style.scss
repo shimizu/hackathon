@@ -2,16 +2,16 @@
 //----------------------------------------------
 // 欧文書体のimportと変数指定
 //----------------------------------------------
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700')        ; //Open Sans
+// @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700')        ; //Open Sans
 // @import url('https://fonts.googleapis.com/css?family=Roboto:400,700')           ; //Roboto
-// @import url('https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700') ; //Roboto Condensed
+@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700') ; //Roboto Condensed
 // @import url('https://fonts.googleapis.com/css?family=Oswald:400,700')           ; //Oswald
 // @import url('https://fonts.googleapis.com/css?family=Lato:400,700')             ; //Lato
 // @import url('https://fonts.googleapis.com/css?family=Fjalla+One')               ; //Fjalla One
 
-$euro_font: 'Open Sans', sans-serif        ; //Open Sans
+// $euro_font: 'Open Sans', sans-serif        ; //Open Sans
 // $euro_font: 'Roboto', sans-serif           ; //Roboto
-// $euro_font: 'Roboto Condensed', sans-serif ; //Roboto Condensed
+$euro_font: 'Roboto Condensed', sans-serif ; //Roboto Condensed
 // $euro_font: 'Oswald', sans-serif           ; //Oswald
 // $euro_font: 'Lato', sans-serif             ; //Lato
 // $euro_font: 'Fjalla One', sans-serif       ; //Fjalla One
@@ -106,10 +106,507 @@ $euro_font: 'Open Sans', sans-serif        ; //Open Sans
 // ||||||||||||||||↓ your code ↓||||||||||||||||
 
 // custom value
+//----------------------------------------------
 // $morisawa_gothic_normal: "游ゴシック", "Yu Gothic", YuGothic ;
 // $morisawa_gothic_bold  : "游ゴシック", "Yu Gothic", YuGothic ;
 
+// color変数
+//----------------------------------------------
+$color_main: #ff6c00;
+$color_background: #f6f4e8;
+$color_text: #6a5537;
+$color_accent: #31ad00;
 
+// common
+//-------------------------------------------------------
 body {
     @include font-family-japan(normal, false);
+    margin: 0;
+    background-color: $color_background;
+}
+
+h1,
+h2,
+h3,
+h4,
+p{
+    margin: 0;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+button,
+select {
+    &:focus {
+        outline: none;
+    }
+}
+button,
+input,
+optgroup,
+select,
+textarea {
+  margin: 0;
+  font: inherit;
+  color: inherit;
+}
+button {
+  overflow: visible;
+}
+button,
+select {
+  text-transform: none;
+}
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: button;
+  cursor: pointer;
+}
+button[disabled],
+html input[disabled] {
+  cursor: default;
+}
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+input {
+  line-height: normal;
+}
+input[type="checkbox"],
+input[type="radio"] {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 0;
+}
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  height: auto;
+}
+input[type="search"] {
+  -webkit-box-sizing: content-box;
+     -moz-box-sizing: content-box;
+          box-sizing: content-box;
+  -webkit-appearance: textfield;
+}
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+.text {
+    color: $color_text;
+    font-size: 16px;
+    line-height: 1.7;
+
+    &--read {
+        font-size: 18px;
+        position: relative;
+        pointer-events: none;
+
+        .text__body {
+            padding-right: 0.5em;
+            display: inline-block;
+            @include font-family-japan(bold, true);
+        }
+        .text__api {
+            font-size: 12px;
+            text-align: right;
+            @include abs-position(0,0,auto,0);
+
+        }
+
+        &:before {
+            @include pseudo-element(calc(100% - 279px), 1px);
+            background: $color_text;
+            @include abs-position(0,0,auto,auto);
+            margin-top: 0.7em;
+            z-index: -1;
+        }
+    }
+}
+
+.main {
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+}
+
+.form-wrap {
+    display: none;
+
+    &--active {
+        display: block;
+    }
+}
+.border-l,
+.border-r {
+    width: 20px;
+    height: 100%;
+    position: fixed;
+    box-sizing: border-box;
+    z-index: 2;
+    background: #fff;
+    &:before {
+        @include pseudo-element(100%,20px);
+        background: #fff;
+        position: fixed;
+    }
+}
+.border-l {
+    left: 0;
+    &:before {
+        top: 0;
+    }
+}
+.border-r {
+    right: 0;
+    &:before {
+        bottom: 0;
+        left: 0;
+    }
+}
+
+// header
+//--------------------------------------------------------
+.header {
+    width: 100%;
+    position: relative;
+    margin: 0 auto auto;
+    z-index: 3;
+
+    &__logo {
+        width: 280px;
+        height: 280px;
+        background: $color_main;
+        border-radius: 100%;
+        @include abs-position(0,auto,auto,0);
+    }
+    &__body {
+        position: relative;
+        width: calc(95% - 280px);
+        margin: 40px 5% 0 auto;
+        z-index: 1;
+    }
+    @include clearfix;
+}
+
+.header__logo {
+    margin: -20px 0 0 -20px;
+    transition: transform .2s ease;
+    -webkit-transition: -webkit-transform .2s ease;
+    -moz-transition: -moz-transform .2s ease;
+    -ms-transition: -ms-transition .2s ease;
+
+    &:hover {
+        @include prefix(transform, scale(1.05,1.05));
+    }
+
+    .main--title{
+        position: relative;
+        width: 100%;
+        height: 100%;
+
+        a{
+            @include abs-position(0,0,0,0);
+            margin: auto;
+            width: 100%;
+            height: 100%;
+        }
+
+        img{
+            width: 50%;
+            @include abs-position(0,0,0,0);
+            margin: auto;
+        }
+    }
+}
+
+.header__body {
+
+    .sns {
+        width: 100%;
+        &__child {
+            width: 46px;
+            height: 46px;
+            float: left;
+            margin-right: 10px;
+            transition: transform .2s ease;
+            -webkit-transition: -webkit-transform .2s ease;
+            -moz-transition: -moz-transform .2s ease;
+            -ms-transition: -ms-transition .2s ease;
+            cursor: pointer;
+
+            img {
+                width: 100%;
+            }
+
+            &:hover {
+                @include prefix(transform, scale(1.1,1.1));
+            }
+        }
+        @include clearfix;
+    }
+}
+
+// main
+//--------------------------------------------------------
+.main {
+    position: relative;
+    overflow: auto;
+    &.js-main{
+        overflow: hidden;
+    }
+    &__map {
+        width: 100%;
+        @include abs-position(0,0,0,0);
+        margin: auto;
+        //仮
+        // width: 40%;
+        // height: 464px;
+    }
+    &__balloon {
+        width: 100%;
+        background: #fff;
+        @include abs-position(auto,0,0,0);
+        margin: auto;
+        z-index: 3;
+        height: auto;
+        @include prefix(transition, height .5s cubic-bezier(.8, 0, .6, 1));
+
+        .balloon__text {
+            text-align: center;
+            padding: 1em;
+            font-size: 32px;
+            @include font-family-japan(bold, true);
+            letter-spacing: 0.1em;
+        }
+
+        &:before {
+            @include pseudo-element(40px,40px);
+            @include abs-position(0,0,auto,0);
+            margin: -20px auto;
+            background: #fff;
+            @include prefix(transform, rotate(45deg));
+        }
+    }
+    &__data {
+        width: 83.333%;
+        max-width: 960px;
+        margin: 0 auto 0;
+        padding: 40px 0 100px;
+    }
+}
+
+.main__data {
+    position: relative;
+    color: $color_text;
+
+    .data__conditions {
+        font-size: 24px;
+        text-align: center;
+        @include font-family-japan(bold, true);
+        &__child {
+            width: 47.5%;
+            float: left;
+            text-align: right;
+            margin-right: 5%;
+
+            &:last-child{
+                text-align: left;
+                margin-right: 0;
+            }
+        }
+        @include clearfix;
+    }
+    .data__answer{
+        font-size: 32px;
+        text-align: center;
+        margin-top: 1em;
+        letter-spacing: 0.1em;
+    }
+    .data__money {
+        font-size: 120px;
+        color: $color_main;
+        text-align: center;
+        @include font-family-euro(bold, true);
+        .unit {
+            font-size: 42px;
+            @include font-family-japan(bold, true);
+        }
+    }
+    .data__money-img {
+        width: 80%;
+        max-width: 400px;
+        margin: 1em auto;
+        img {
+            width: 100%;
+        }
+    }
+}
+
+.main__sub-data {
+    width: 83.333%;
+    max-width: 600px;
+    color: $color_text;
+    margin: 2em auto 0;
+
+    .sub-data__answer {
+        font-size: 24px;
+        text-align: center;
+        @include font-family-japan(bold,true);
+
+    }
+    .sub-data__table {
+        width: 100%;
+        border: 1px solid $color_text;
+        padding: 1.5em 50px;
+        margin: 1em 0 2em;
+
+        .table__ctg {
+            padding: 0.3em;
+            color: $color_text;
+            font-size: 16px;
+            @include font-family-japan(bold,true);
+        }
+        .table__value {
+            padding: 0.3em;
+            font-size: 28px;
+            text-align: right;
+            color: $color_main;
+            letter-spacing: .05em;
+            @include font-family-euro(normal,false);
+        }
+    }
+}
+.zoom {
+    width: auto;
+    margin: 0 auto;
+    text-align: right;
+    @include abs-position(0,5%,auto,auto);
+    top: 150px;
+    z-index: 3;
+    //display: none;
+
+    &--btn {
+        display: none;
+        background: none;
+        border: 2px solid $color_text;
+        padding: 0.5em 0.7em;
+        border-radius: 5px;
+        font-size: 16px;
+        color: $color_text;
+        @include font-family-japan(bold, true);
+
+    }
+}
+
+// form
+//--------------------------------------------------------
+.form-wrap {
+    width: 60%;
+    max-width: 600px;
+    margin: 20px auto;
+
+    .form__box {
+        width: 100%;
+        margin-top: 20px;
+        &:first-child {
+            margin-top: 0;
+        }
+        &__text {
+            color: $color_text;
+            font-size: 24px;
+            @include font-family-japan(bold,true);
+        }
+    }
+}
+//select-box共通
+.select {
+    &__box {
+        width: 100%;
+        background: #fff;
+        border-radius: 5px;
+        padding: 0.7em 1em;
+        -webkit-appearance: none;
+    	-moz-appearance: none;
+    	appearance: none;
+        border: 2px solid $color_text;
+        color: $color_text;
+        margin-top: 0.5em;
+    }
+    &__text {
+        color: $color_text;
+        font-size: 24px;
+        @include font-family-japan(bold, true);
+    }
+}
+
+.form__box--region {
+    .select__box {
+        background: none;
+        border: none;
+        text-align: center;
+        color: $color_text;
+        cursor: pointer;
+    }
+}
+.form__box--conditions {
+    width: 100%;
+
+    .form__box__text {
+        margin-bottom: 0.5em;
+    }
+
+    .select {
+        width: 40%;
+        margin-right: 5%;
+        float: left;
+
+        &:last-child {
+            width: 55%;
+            margin-right: 0;
+
+            .select__box {
+                width: 49%;
+                float: left;
+                margin-right: 2%;
+
+                &:last-child {
+                    margin-right: 0;
+                }
+                @include clearfix;
+            }
+        }
+    }
+    @include clearfix;
+}
+.form__box--start {
+    width: 100%;
+    margin-top: 20px;
+    .btn {
+        background: $color_main;
+        border-radius: 10px;
+        border: none;
+        text-align: center;
+        color: #fff;
+
+        .start {
+            background: none;
+            border: none;
+            color: #fff;
+            font-size: 24px;
+            letter-spacing: 0.1em;
+            text-align: center;
+            width: 100%;
+            padding: 0.8em ;
+            @include font-family-euro(bold, true);
+        }
+    }
 }

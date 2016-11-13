@@ -30,7 +30,7 @@ gulp.task('sass', function () {
 gulp.task('browser-sync', function() {
     browserSync({
         server: {
-            baseDir: "content/2016ResasAPI", //　Target directory
+            baseDir: "./", //　Target directory
             index  : "index.html" // index file
         }
     });
