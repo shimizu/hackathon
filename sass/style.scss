@@ -485,15 +485,15 @@ input[type="search"]::-webkit-search-decoration {
     }
 }
 .zoom {
-    width: 90%;
+    width: auto;
     margin: 0 auto;
     text-align: right;
-    @include abs-position(0,0,auto,0);
+    @include abs-position(0,5%,auto,auto);
     top: 150px;
     z-index: 3;
     //display: none;
 
-    &__btn {
+    &--btn {
         display: none;
         background: none;
         border: 2px solid $color_text;
