@@ -7,3 +7,5 @@ npm-debug.log
 Thumbs.db
 ehthumbs.db
 *.conf.tmp
+
+**/css/
