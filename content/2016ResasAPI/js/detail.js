@@ -110,7 +110,7 @@
     
     //CPI
     function loadCPI() {
-        d3.tsv(dataDir+"kakei.tsv", cast, function(d){
+        d3.tsv(dataDir+"cpi.tsv", cast, function(d){
             var nested = d3.nest()
                 .rollup(function(d){ return d[0] })
                 .key(function(d){ return d["県コード"]})
