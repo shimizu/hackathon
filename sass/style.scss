@@ -482,7 +482,7 @@ input[type="search"]::-webkit-search-decoration {
             .table__ctg {
                 padding: 0.3em;
                 color: $color_text;
-                font-size: 16px;
+                font-size: 15px;
                 @include font-family-japan(bold,true);
                 height: 58px;
             }
@@ -493,6 +493,11 @@ input[type="search"]::-webkit-search-decoration {
                 color: $color_main;
                 letter-spacing: .05em;
                 @include font-family-euro(normal,false);
+
+                .value__unit {
+                    font-size: 14px;
+                    display: inline-block;
+                }
             }
         }
     }

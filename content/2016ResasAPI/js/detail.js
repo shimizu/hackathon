@@ -10,7 +10,8 @@
         return d
     }
 
-    const key ="laIipCFynb2CgaT7SnJ1c1QxN0LCB9b31AvLM5nO"
+    // const key ="laIipCFynb2CgaT7SnJ1c1QxN0LCB9b31AvLM5nO"
+    const key ="8hBhzQ1tXR7BrFdZPj5gV8b64BuQVhpq64h2afO5"
     const dataDir = "./data/"
 
     const param = {
@@ -116,7 +117,7 @@
                 .map(d)
 
             var value = (nested.get(param.prefCode))["消費支出"]
-            d3.select("#spend").text(value)
+            d3.select("#spend").text(value / 10000)
 
         })
     }
@@ -132,7 +133,7 @@
                 .map(d)
 
             var value = (nested.get(param.prefCode))["借家平均家賃"]
-            d3.select("#rent").text(value)
+            d3.select("#rent").text(value / 10000)
 
             var sorted_data = d.sort(function(a, b){
               var ad = 0, bd = 0;
