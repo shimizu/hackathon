@@ -478,18 +478,34 @@ input[type="search"]::-webkit-search-decoration {
         }
     }
 }
+.zoom-off {
+    width: 90%;
+    margin: 0 auto;
+    text-align: right;
+    @include abs-position(0,0,auto,0);
+    top: 150px;
+    z-index: 3;
+    //display: none;
+}
 
 // form
 //--------------------------------------------------------
+.form-wrap {
+    width: 83.333%;
+    margin: 20px auto;
+}
 .select {
-    width: 100%;
-    -webkit-appearance: none;
-	-moz-appearance: none;
-	appearance: none;
+    width: 50%;
 
     &__place,
     &__age,
     &__ctg {
         width: 100%;
+        background: #fff;
+        border-radius: 0;
+        padding: 0.5em;
+        -webkit-appearance: none;
+    	-moz-appearance: none;
+    	appearance: none;
     }
 }
