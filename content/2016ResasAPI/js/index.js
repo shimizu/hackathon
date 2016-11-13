@@ -74,16 +74,6 @@ var index = {
         });
     },
     mapZoom: function () {
-        /*
-         *  中心の出し方
-         *
-         *　x座標 - (ステージのwidth/2) + (rectの横幅/2)
-         *
-         *
-         *
-         *
-         *
-         */
 
         var zoom = 2
         var viewPort = [1012, 888]
