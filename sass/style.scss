@@ -592,24 +592,12 @@ input[type="search"]::-webkit-search-decoration {
     }
 
     .select {
-        width: 40%;
+        width: 47.5%;
         margin-right: 5%;
         float: left;
 
         &:last-child {
-            width: 55%;
             margin-right: 0;
-
-            .select__box {
-                width: 49%;
-                float: left;
-                margin-right: 2%;
-
-                &:last-child {
-                    margin-right: 0;
-                }
-                @include clearfix;
-            }
         }
     }
     @include clearfix;
