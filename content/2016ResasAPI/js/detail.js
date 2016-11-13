@@ -110,9 +110,13 @@
     //年間支出
     function loadSpend() {
         d3.tsv(dataDir+"kakei.tsv", cast, function(d){
-            
-            
-            
+            var nested = d3.nest()
+                .rollup(function(d){ return d[0] })
+                .key(function(d){ return d["県コード"]})
+                .map(d)
+                
+            var value = (nested.get(param.prefCode))["消費支出"]    
+            d3.select("#spend").text(value)
             
         })
     }
