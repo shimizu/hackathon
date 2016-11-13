@@ -38,13 +38,14 @@
         var api = RESASAPI()
         api.apikey(key)     
         api.type("一人当たり賃金")    
-        api.param(param)         
+        api.param(param)
+    
     
         api.on('load', function(data) {
-            var valueArray = data.result.data.map(function(d){ return d })
-                .filter(function(d){ return d.year == "2014" })
+            console.log(data)
+            var valueArray = data.result.data.map(function(d){ return d.value })
             
-            var value = valueArray[0].value
+            var value = data.result.data[data.result.data.length-1].value
             var prefName = data.result.prefName
             var sicName = data.result.sicName
             
@@ -64,10 +65,8 @@
         api.param(param)         
         api.on('load', function(data) {
             
-            var valueArray = data.result.data.map(function(d){ return d })
-                .filter(function(d){ return d.year == "2014" })
-                        
-            d3.select("#taxes").text(valueArray[0].value * 1000 / 10000 )
+            var value = data.result.data[data.result.data.length-1].value
+            d3.select("#taxes").text(value * 1000 / 10000 )
         })
          
         api.send()        
