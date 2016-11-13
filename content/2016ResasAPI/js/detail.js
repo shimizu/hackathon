@@ -32,6 +32,7 @@
     loadRent()
     loadRegular()
     loadBlack()
+    loadCPI()
 
     //一人当たり賃金データのロード
     function loadWages() {
@@ -104,6 +105,21 @@
 
         api.send()
 
+    }
+
+    
+    //CPI
+    function loadCPI() {
+        d3.tsv(dataDir+"kakei.tsv", cast, function(d){
+            var nested = d3.nest()
+                .rollup(function(d){ return d[0] })
+                .key(function(d){ return d["県コード"]})
+                .map(d)
+
+            var value = (nested.get(param.prefCode))["消費者物価指数"]
+            d3.select("#cpi").text(value)
+
+        })
     }
 
 
