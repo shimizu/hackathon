@@ -268,6 +268,7 @@ input[type="search"]::-webkit-search-decoration {
     right: 0;
     &:before {
         bottom: 0;
+        left: 0;
     }
 }
 
@@ -398,7 +399,7 @@ input[type="search"]::-webkit-search-decoration {
         width: 83.333%;
         max-width: 960px;
         margin: 0 auto 0;
-        padding: 60px 0 100px;
+        padding: 40px 0 100px;
     }
 }
 
@@ -465,7 +466,7 @@ input[type="search"]::-webkit-search-decoration {
         width: 100%;
         border: 1px solid $color_text;
         padding: 0.5em;
-        margin-top: 1em;
+        margin: 1em 0 1.5em;
 
         .table__ctg {
             padding: 0.5em;
