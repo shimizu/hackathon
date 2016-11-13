@@ -3,6 +3,7 @@
     console.log("load detail.js")
     
     const key ="laIipCFynb2CgaT7SnJ1c1QxN0LCB9b31AvLM5nO"
+    const dataDir = "./data/"
     
     const param = {
         prefCode:getParameterByName('prefCode'),
@@ -17,6 +18,8 @@
 
     loadWages()
     loadTaxes()
+    loadJob()
+    loadFoundation()
     
     
     
@@ -33,7 +36,6 @@
                 .filter(function(d){ return d.year == "2014" })
             
             var value = valueArray[0].value
-            console.log(value)
             var prefName = data.result.prefName
             var sicName = data.result.sicName
             
@@ -51,13 +53,45 @@
         api.apikey(key)     
         api.type("一人当たり地方税")    
         api.param(param)         
-        console.log(api.url())
         api.on('load', function(data) {
             
             var valueArray = data.result.data.map(function(d){ return d })
                 .filter(function(d){ return d.year == "2014" })
                         
             d3.select("#taxes").text(valueArray[0].value * 1000 / 10000 )
+        })
+         
+        api.send()        
+        
+    }
+    
+    //有効求人倍率取得
+    function loadJob() {
+        var api = RESASAPI()
+        api.apikey(key)     
+        api.type("有効求人倍率")    
+        api.param(param)         
+        console.log(api.url())
+        api.on('load', function(data) {
+            var valueArray = data.result.data.map(function(d){ return d.value })
+                        
+            d3.select("#job").text(valueArray[valueArray.length-1])
+        })
+         
+        api.send()        
+        
+    }
+    
+    //起業のしやすさ
+    function loadFoundation() {
+        var api = RESASAPI()
+        api.apikey(key)     
+        api.type("創業比率")    
+        api.param(param)         
+        api.on('load', function(data) {
+            var valueArray = data.result.data.map(function(d){ return d.value })
+                        
+            d3.select("#foundation").text(valueArray[valueArray.length-1])
         })
          
         api.send()        
