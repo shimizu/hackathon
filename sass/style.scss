@@ -137,7 +137,12 @@ ul {
     list-style: none;
     padding: 0;
 }
-
+button,
+select {
+    &:focus {
+        outline: none;
+    }
+}
 button,
 input,
 optgroup,
@@ -203,9 +208,9 @@ input[type="search"]::-webkit-search-decoration {
     &--read {
         font-size: 18px;
         position: relative;
+        pointer-events: none;
 
         .text__body {
-            background: $color_background;
             padding-right: 0.5em;
             display: inline-block;
             @include font-family-japan(bold, true);
@@ -218,9 +223,9 @@ input[type="search"]::-webkit-search-decoration {
         }
 
         &:before {
-            @include pseudo-element(100%, 1px);
+            @include pseudo-element(calc(100% - 369px), 1px);
             background: $color_text;
-            @include abs-position(0,0,auto,0);
+            @include abs-position(0,0,auto,auto);
             margin-top: 0.7em;
             z-index: -1;
         }
@@ -264,6 +269,7 @@ input[type="search"]::-webkit-search-decoration {
     right: 0;
     &:before {
         bottom: 0;
+        left: 0;
     }
 }
 
@@ -362,8 +368,8 @@ input[type="search"]::-webkit-search-decoration {
         @include abs-position(0,0,0,0);
         margin: auto;
         //仮
-        width: 40%;
-        height: 464px;
+        // width: 40%;
+        // height: 464px;
     }
     &__balloon {
         width: 100%;
@@ -388,13 +394,14 @@ input[type="search"]::-webkit-search-decoration {
             margin: -20px auto;
             background: #fff;
             @include prefix(transform, rotate(45deg));
+            z-index: -1;
         }
     }
     &__data {
         width: 83.333%;
         max-width: 960px;
         margin: 0 auto 0;
-        padding: 60px 0 100px;
+        padding: 40px 0 100px;
     }
 }
 
@@ -438,7 +445,7 @@ input[type="search"]::-webkit-search-decoration {
     .data__money-img {
         width: 80%;
         max-width: 400px;
-        margin: 0 auto;
+        margin: 1em auto;
         img {
             width: 100%;
         }
@@ -447,49 +454,190 @@ input[type="search"]::-webkit-search-decoration {
 
 .main__sub-data {
     width: 83.333%;
-    max-width: 600px;
+    //max-width: 600px;
     color: $color_text;
     margin: 2em auto 0;
 
-    .sub-data__answer {
-        font-size: 24px;
-        text-align: center;
-        @include font-family-japan(bold,true);
+    .sub-data__wrap {
+        width:47.5%;
+        float: left;
+        margin-right: 5%;
 
-    }
-    .sub-data__table {
-        width: 100%;
-        border: 1px solid $color_text;
-        padding: 0.5em;
-        margin-top: 1em;
+        &:last-child {
+            margin-right: 0;
+        }
 
-        .table__ctg {
-            padding: 0.5em;
-            color: $color_text;
-            font-size: 16px;
+        .sub-data__answer {
+            font-size: 24px;
+            text-align: center;
             @include font-family-japan(bold,true);
+
         }
-        .table__value {
-            padding: 0.5em;
-            font-size: 16px;
-            text-align: right;
-            color: $color_main;
-            @include font-family-euro(normal,false);
+        .sub-data__table {
+            width: 100%;
+            border: 1px solid $color_text;
+            padding: 1.5em 35px;
+            margin: 1em 0 2em;
+
+            .table__ctg {
+                padding: 0.3em;
+                color: $color_text;
+                font-size: 15px;
+                @include font-family-japan(bold,true);
+                height: 58px;
+            }
+            .table__value {
+                padding: 0.3em;
+                font-size: 28px;
+                text-align: right;
+                color: $color_main;
+                letter-spacing: .05em;
+                @include font-family-euro(normal,false);
+
+                .value__unit {
+                    font-size: 14px;
+                    display: inline-block;
+                }
+                .value__rank {
+                    font-size: 13px;
+                    margin-top: 0.5em;
+                    letter-spacing: 0;
+                }
+            }
         }
+    }
+    @include clearfix;
+}
+.zoom {
+    width: auto;
+    margin: 0 auto;
+    text-align: right;
+    @include abs-position(0,5%,auto,auto);
+    top: 150px;
+    z-index: 3;
+    //display: none;
+
+    &--btn {
+        display: none;
+        background: none;
+        border: 2px solid $color_text;
+        padding: 0.5em 0.7em;
+        border-radius: 5px;
+        font-size: 16px;
+        color: $color_text;
+        @include font-family-japan(bold, true);
+
     }
 }
 
 // form
 //--------------------------------------------------------
-.select {
-    width: 100%;
-    -webkit-appearance: none;
-	-moz-appearance: none;
-	appearance: none;
+.form-wrap {
+    width: 60%;
+    max-width: 600px;
+    margin: 40px auto;
 
-    &__place,
-    &__age,
-    &__ctg {
+    .form__box {
         width: 100%;
+        margin-top: 20px;
+        &:first-child {
+            margin-top: 0;
+        }
+        &__text {
+            color: $color_text;
+            font-size: 24px;
+            @include font-family-japan(bold,true);
+        }
+    }
+}
+//select-box共通
+.select {
+    .prefName {
+        color: $color_text;
+        @include font-family-japan(bold, true);
+        font-size: 32px;
+        text-align: center;
+    }
+    &__box {
+        width: 100%;
+        background: #fff;
+        border-radius: 5px;
+        padding: 0.7em 1em;
+        -webkit-appearance: none;
+    	-moz-appearance: none;
+    	appearance: none;
+        border: 2px solid $color_text;
+        color: $color_text;
+        margin-top: 0.5em;
+    }
+    &__text {
+        color: $color_text;
+        font-size: 18px;
+        text-align: left;
+        @include font-family-japan(bold, true);
+        position: relative;
+        // &:after {
+        //     @include pseudo-element(7em, 1px);
+        //     background: $color_text;
+        //     @include abs-position(0,0,0,auto);
+        //     margin: auto;
+        // }
+    }
+}
+
+.form__box--region {
+    .select__box {
+        background: none;
+        border: none;
+        text-align: center;
+        color: $color_text;
+        cursor: pointer;
+    }
+}
+.form__box--conditions {
+    width: 100%;
+
+    .form__box__text {
+        margin-bottom: 0.5em;
+    }
+
+    .select {
+        width: 47.5%;
+        margin-right: 5%;
+        float: left;
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+    @include clearfix;
+}
+.form__box--start {
+    width: 100%;
+    margin-top: 20px;
+    .btn {
+        background: $color_main;
+        border-radius: 10px;
+        border: none;
+        text-align: center;
+        color: #fff;
+
+        .start {
+            background: none;
+            border: none;
+            color: #fff;
+            font-size: 24px;
+            letter-spacing: 0.1em;
+            text-align: center;
+            width: 100%;
+            padding: 0.8em ;
+            @include font-family-euro(bold, true);
+        }
+    }
+}
+
+svg {
+    .map_body {
+        cursor: pointer;
     }
 }

@@ -1,5 +1,6 @@
 <head>
-    <link rel="stylesheet" href="/css/style.css" media="screen">
+    <meta charset=“utf-8”>
+    <link rel="stylesheet" href="./css/style.css" media="screen">
     <script src="//cdnjs.cloudflare.com/ajax/libs/d3/4.1.1/d3.min.js"></script>
     <script src="js/resas_api.js"></script>
 </head>
@@ -23,73 +24,109 @@
             <li class="sns__child"><img src="img/icon_tw.png"></li>
         </ul>
         <p class="text text--read">
-            <span class="text__body">あなたの地域毎の暮らしやすさを<br>「見える化」</span>
+            <span class="text__body">あなたの地域毎の働きやすさ暮らしやすさを<br>「見える化」</span>
             <span class="text__api">RESAS-API</span>
         </p>
     </div>
     <div class="main__data">
-        <div class="data__conditions">
-            <p class="data__conditions__child" id="prefName"></p>
-            <p class="data__conditions__child" id="sicName"></p>
-        </div>
+        <p class="data__conditions">
+            <span class="data__conditions__child" id="prefName"></span>
+            <span class="data__conditions__child" id="sicName"></span>
+        </p>
         <h2 class="data__answer">この地域であなたの想定年収は...</h2>
         <p class="data__money"><span class="value" id="value"></span><span class="unit">万円</span></p>
         <p class="data__money-img"><img src="img/money.png"></p>
 
         <div class="main__sub-data">
-            <h3 class="sub-data__answer">あなたの業種の業績は...</h3>
-            <table class="sub-data__table">
-                <tbody>
-                    <tr>
-                        <td class="table__ctg">
-                            年間平均支出
-                        </td>
-                        <td class="table__value">
-                            000000
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="table__ctg">
-                            年間平均住民税
-                        </td>
-                        <td class="table__value">
-                            000000
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="table__ctg">
-                            有効求人倍率
-                        </td>
-                        <td class="table__value">
-                            00
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="table__ctg">
-                            起業のしやすさ
-                        </td>
-                        <td class="table__value">
-                            0
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="table__ctg">
-                            消費者物価指数
-                        </td>
-                        <td class="table__value">
-                            00.0
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="table__ctg">
-                            この地域で最も稼いでいる業種
-                        </td>
-                        <td class="table__value">
-                            〇〇業
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
+            <div class="sub-data__wrap">
+                <h3 class="sub-data__answer">この地域の働きやすさは…</h3>
+                <table class="sub-data__table">
+                    <tbody>
+                        <tr>
+                            <td class="table__ctg">
+                                有効求人倍率
+                            </td>
+                            <td class="table__value">
+                                <span id="job"></span><span class="value__unit">倍</span><br><span id="job_rank" class="value__rank"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="table__ctg">
+                                潜在的なブラック予備軍比率
+                            </td>
+                            <td class="table__value">
+                                <span id="black"></span><span class="value__unit">%</span><br><span id="black_rank" class="value__rank"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="table__ctg">
+                                非正規雇用比率
+                            </td>
+                            <td class="table__value">
+                                <span id="regular"></span><span class="value__unit">%</span><br><span id="regular_rank" class="value__rank"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="table__ctg">
+                                起業している企業比率
+                            </td>
+                            <td class="table__value">
+                                <span id=foundation></span><span class="value__unit">%</span>
+                            </td>
+                        </tr>
+                        <!--
+                        <tr>
+                            <td class="table__ctg">
+                                この地域で最も稼いでいる業種
+                            </td>
+                            <td class="table__value">
+                                〇〇業
+                            </td>
+                        </tr>
+                        -->
+
+                    </tbody>
+                </table>
+            </div>
+            <div class="sub-data__wrap">
+                <h3 class="sub-data__answer">この地域の住みやすさは...</h3>
+                <table class="sub-data__table">
+                    <tbody>
+                        <tr>
+                            <td class="table__ctg">
+                                年間平均支出
+                            </td>
+                            <td class="table__value">
+                                <span id="spend"></span><span class="value__unit">万円</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="table__ctg">
+                                借家平均家賃
+                            </td>
+                            <td class="table__value">
+                                <span id="rent"></span><span class="value__unit">万円</span><br><span id="rent_rank" class="value__rank"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="table__ctg">
+                                年間平均住民税
+                            </td>
+                            <td  class="table__value">
+                                <span id="taxes"></span><span class="value__unit">万円</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="table__ctg">
+                                消費者物価指数
+                            </td>
+                            <td class="table__value">
+                                <span id="cpi"></span><span class="value__unit"></span><br><span id="cpi_rank" class="value__rank"></span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
 </section>

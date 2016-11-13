@@ -1,7 +1,8 @@
 <head>
+    <meta charset="utf-8">
     <title>さらりーまっぷ！</title>
-    <link rel="stylesheet" href="/css/normalize.css">
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="./css/normalize.css">
+    <link rel="stylesheet" href="./css/style.css">
     <script src="//cdnjs.cloudflare.com/ajax/libs/d3/4.1.1/d3.min.js"></script>
 </head>
 
@@ -26,117 +27,64 @@
             <li class="sns__child"><img src="img/icon_tw.png"></li>
         </ul>
         <p class="text text--read">
-            <span class="text__body">あなたの地域毎の暮らしやすさを<br>「見える化」</span>
+            <span class="text__body">あなたの地域の働きやすさ暮らしやすさを<br>「見える化」</span>
             <span class="text__api">RESAS-API</span>
         </p>
     </div>
+    <button class="zoom zoom--btn" id="zoom-off">選び直す</button>
     <div class="main__map">
-        <!-- <svg id="main_map" data-name="map" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1012.35 888.08">
+        <svg width="100%" height="100%" viewBox="0 0 1012 1588" preserveAspectRatio="xMidYMid meet">
             <defs>
                 <style>.cls-1{fill:#31ad00;}</style>
             </defs>
-            <g class="map_body">
-                <rect class="cls-1" x="829.85" width="182.5" height="160.43"/>
-                <rect class="cls-1" x="829.85" y="220.65" width="130.26" height="56.22"/>
-                <rect class="cls-1" x="829.85" y="278.87" width="64.13" height="56.22"/>
-                <rect class="cls-1" x="895.98" y="278.87" width="64.13" height="56.22"/>
-                <rect class="cls-1" x="829.85" y="337.09" width="64.13" height="56.22"/>
-                <rect class="cls-1" x="895.98" y="337.09" width="64.13" height="56.22"/>
-                <rect class="cls-1" x="895.98" y="395.31" width="64.13" height="56.22"/>
-                <rect class="cls-1" x="829.85" y="453.53" width="64.13" height="56.22"/>
-                <rect class="cls-1" x="829.85" y="511.59" width="64.13" height="56.22"/>
-                <rect class="cls-1" x="829.85" y="569.97" width="64.13" height="56.22"/>
-                <polygon class="cls-1" points="763.72 569.98 763.72 655.16 827.85 654.9 827.85 569.98 763.72 569.98"/>
-                <rect class="cls-1" x="631.47" y="569.97" width="64.13" height="56.22"/>
-                <rect class="cls-1" x="499.21" y="569.97" width="64.13" height="114.17"/>
-                <rect class="cls-1" x="763.72" y="453.53" width="64.13" height="56.22"/>
-                <rect class="cls-1" x="763.72" y="511.59" width="64.13" height="56.22"/>
-                <rect class="cls-1" x="300.82" y="511.59" width="64.13" height="56.22"/>
-                <rect class="cls-1" x="300.82" y="569.97" width="64.13" height="56.22"/>
-                <rect class="cls-1" x="234.69" y="569.97" width="64.13" height="56.22"/>
-                <rect class="cls-1" x="168.56" y="511.59" width="64.13" height="56.22"/>
-                <rect class="cls-1" x="234.69" y="511.59" width="64.13" height="56.22"/>
-                <rect class="cls-1" x="300.82" y="657.03" width="64.13" height="56.22"/>
-                <rect class="cls-1" x="300.82" y="715.41" width="64.13" height="56.22"/>
-                <rect class="cls-1" x="234.69" y="715.41" width="64.13" height="56.22"/>
-                <rect class="cls-1" y="831.85" width="64.13" height="56.22"/>
-                <rect class="cls-1" x="234.69" y="657.03" width="64.13" height="56.22"/>
-                <rect class="cls-1" x="135.5" y="598.73" width="64.13" height="56.22"/>
-                <rect class="cls-1" x="135.5" y="657.11" width="64.13" height="56.22"/>
-                <rect class="cls-1" x="69.37" y="657.11" width="64.13" height="56.22"/>
-                <rect class="cls-1" x="135.5" y="715.41" width="64.13" height="56.22"/>
-                <rect class="cls-1" x="69.37" y="715.41" width="64.13" height="56.22"/>
-                <rect class="cls-1" x="69.37" y="598.73" width="64.13" height="56.22"/>
-                <rect class="cls-1" x="433.08" y="569.97" width="64.13" height="114.17"/>
-                <rect class="cls-1" x="433.08" y="511.59" width="97.19" height="56.22"/>
-                <rect class="cls-1" x="895.98" y="453.53" width="64.13" height="114.44"/>
-                <rect class="cls-1" x="697.59" y="453.53" width="64.13" height="114.44"/>
-                <polygon class="cls-1" points="697.6 569.98 697.6 654.9 761.72 655.16 761.72 569.98 697.6 569.98"/>
-                <rect class="cls-1" x="366.95" y="511.75" width="64.13" height="114.44"/>
-                <polygon class="cls-1" points="565.34 569.98 565.34 742.37 629.47 742.52 629.47 569.98 565.34 569.98"/>
-                <rect class="cls-1" x="565.34" y="337.09" width="64.13" height="114.44"/>
-                <rect class="cls-1" x="631.47" y="453.53" width="64.13" height="114.44"/>
-                <rect class="cls-1" x="895.98" y="569.97" width="64.13" height="114.44"/>
-                <rect class="cls-1" x="763.72" y="395.31" width="130.26" height="56.22"/>
-                <rect class="cls-1" x="631.47" y="395.31" width="130.26" height="56.22"/>
-                <rect class="cls-1" x="433.08" y="686.14" width="130.26" height="56.22"/>
-                <rect class="cls-1" x="102.43" y="773.63" width="97.19" height="56.22"/>
-                <rect class="cls-1" x="532.27" y="453.53" width="97.19" height="56.22"/>
-                <rect class="cls-1" x="532.27" y="511.59" width="97.19" height="56.22"/>
-            </g>
-        </svg> -->
-        <svg viewBox="0 0 1012 888">
-            <defs>
-                <style>.cls-1{fill:#31ad00;}</style>
-            </defs>
-            <g id="main_map" class="map_body" transform="scale(1,1)">
-                <rect class="cls-1" x="829.85" y="0" width="182.5" height="160.43" transform="translate(0, 0)"></rect>
-                <rect class="cls-1" x="829.85" y="220.65" width="130.26" height="56.22" transform="translate(0, 0)"></rect>
-                <rect class="cls-1" x="829.85" y="278.87" width="64.13" height="56.22" transform="translate(0, 0)"></rect>
-                <rect class="cls-1" x="895.98" y="278.87" width="64.13" height="56.22" transform="translate(0, 0)"></rect>
-                <rect class="cls-1" x="829.85" y="337.09" width="64.13" height="56.22" transform="translate(0, 0)"></rect>
-                <rect class="cls-1" x="895.98" y="337.09" width="64.13" height="56.22" transform="translate(0, 0)"></rect>
-                <rect class="cls-1" x="895.98" y="395.31" width="64.13" height="56.22" transform="translate(0, 0)"></rect>
-                <rect class="cls-1" x="829.85" y="453.53" width="64.13" height="56.22" transform="translate(0, 0)"></rect>
-                <rect class="cls-1" x="829.85" y="511.59" width="64.13" height="56.22" transform="translate(0, 0)"></rect>
-                <rect class="cls-1" x="829.85" y="569.97" width="64.13" height="56.22" transform="translate(0, 0)"></rect>
-                <rect class="cls-1" x="763.72" y="569.98" width="64.13" height="85.18" transform="translate(0, 0)"></rect>
-                <rect class="cls-1" x="631.47" y="569.97" width="64.13" height="56.22" transform="translate(0, 0)"></rect>
-                <rect class="cls-1" x="499.21" y="569.97" width="64.13" height="114.17" transform="translate(0, 0)"></rect>
-                <rect class="cls-1" x="763.72" y="453.53" width="64.13" height="56.22" transform="translate(0, 0)"></rect>
-                <rect class="cls-1" x="763.72" y="511.59" width="64.13" height="56.22" transform="translate(0, 0)"></rect>
-                <rect class="cls-1" x="300.82" y="511.59" width="64.13" height="56.22" transform="translate(0, 0)"></rect>
-                <rect class="cls-1" x="300.82" y="569.97" width="64.13" height="56.22" transform="translate(0, 0)"></rect>
-                <rect class="cls-1" x="234.69" y="569.97" width="64.13" height="56.22" transform="translate(0, 0)"></rect>
-                <rect class="cls-1" x="168.56" y="511.59" width="64.13" height="56.22" transform="translate(0, 0)"></rect>
-                <rect class="cls-1" x="234.69" y="511.59" width="64.13" height="56.22" transform="translate(0, 0)"></rect>
-                <rect class="cls-1" x="300.82" y="657.03" width="64.13" height="56.22" transform="translate(0, 0)"></rect>
-                <rect class="cls-1" x="300.82" y="715.41" width="64.13" height="56.22" transform="translate(0, 0)"></rect>
-                <rect class="cls-1" x="234.69" y="715.41" width="64.13" height="56.22" transform="translate(0, 0)"></rect>
-                <rect class="cls-1" y="831.85" width="64.13" height="56.22" transform="translate(0, 0)"></rect>
-                <rect class="cls-1" x="234.69" y="657.03" width="64.13" height="56.22" transform="translate(0, 0)"></rect>
-                <rect class="cls-1" x="135.5" y="598.73" width="64.13" height="56.22" transform="translate(0, 0)"></rect>
-                <rect class="cls-1" x="135.5" y="657.11" width="64.13" height="56.22" transform="translate(0, 0)"></rect>
-                <rect class="cls-1" x="69.37" y="657.11" width="64.13" height="56.22" transform="translate(0, 0)"></rect>
-                <rect class="cls-1" x="135.5" y="715.41" width="64.13" height="56.22" transform="translate(0, 0)"></rect>
-                <rect class="cls-1" x="69.37" y="715.41" width="64.13" height="56.22" transform="translate(0, 0)"></rect>
-                <rect class="cls-1" x="69.37" y="598.73" width="64.13" height="56.22" transform="translate(0, 0)"></rect>
-                <rect class="cls-1" x="433.08" y="569.97" width="64.13" height="114.17" transform="translate(0, 0)"></rect>
-                <rect class="cls-1" x="433.08" y="511.59" width="97.19" height="56.22" transform="translate(0, 0)"></rect>
-                <rect class="cls-1" x="895.98" y="453.53" width="64.13" height="114.44" transform="translate(0, 0)"></rect>
-                <rect class="cls-1" x="697.59" y="453.53" width="64.13" height="114.44" transform="translate(0, 0)"></rect>
-                <rect class="cls-1" x="697.6" y="569.98" width="64.13" height="85.18" transform="translate(0, 0)"></rect>
-                <rect class="cls-1" x="366.95" y="511.75" width="64.13" height="114.44" transform="translate(0, 0)"></rect>
-                <rect class="cls-1" x="565.34" y="569.98" width="64.13" height="172.54" transform="translate(0, 0)"></rect>
-                <rect class="cls-1" x="565.34" y="337.09" width="64.13" height="114.44" transform="translate(0, 0)"></rect>
-                <rect class="cls-1" x="631.47" y="453.53" width="64.13" height="114.44" transform="translate(0, 0)"></rect>
-                <rect class="cls-1" x="895.98" y="569.97" width="64.13" height="114.44" transform="translate(0, 0)"></rect>
-                <rect class="cls-1" x="763.72" y="395.31" width="130.26" height="56.22" transform="translate(0, 0)"></rect>
-                <rect class="cls-1" x="631.47" y="395.31" width="130.26" height="56.22" transform="translate(0, 0)"></rect>
-                <rect class="cls-1" x="433.08" y="686.14" width="130.26" height="56.22" transform="translate(0, 0)"></rect>
-                <rect class="cls-1" x="102.43" y="773.63" width="97.19" height="56.22" transform="translate(0, 0)"></rect>
-                <rect class="cls-1" x="532.27" y="453.53" width="97.19" height="56.22" transform="translate(0, 0)"></rect>
-                <rect class="cls-1" x="532.27" y="511.59" width="97.19" height="56.22" transform="translate(0, 0)"></rect>
+            <g id="main_map" class="map_body" transform="translate(0 300)">
+                <rect class="cls-1" x="829.85" y="0" width="182.5" height="160.43" transform="translate(0, 0)" data-pref="北海道"></rect>
+                <rect class="cls-1" x="829.85" y="220.65" width="130.26" height="56.22" transform="translate(0, 0)" data-pref="青森"></rect>
+                <rect class="cls-1" x="829.85" y="278.87" width="64.13" height="56.22" transform="translate(0, 0)" data-pref="秋田"></rect>
+                <rect class="cls-1" x="895.98" y="278.87" width="64.13" height="56.22" transform="translate(0, 0)" data-pref="岩手"></rect>
+                <rect class="cls-1" x="829.85" y="337.09" width="64.13" height="56.22" transform="translate(0, 0)" data-pref="山形"></rect>
+                <rect class="cls-1" x="895.98" y="337.09" width="64.13" height="56.22" transform="translate(0, 0)" data-pref="宮城"></rect>
+                <rect class="cls-1" x="895.98" y="395.31" width="64.13" height="56.22" transform="translate(0, 0)" data-pref="福島"></rect>
+                <rect class="cls-1" x="829.85" y="453.53" width="64.13" height="56.22" transform="translate(0, 0)" data-pref="栃木"></rect>
+                <rect class="cls-1" x="829.85" y="511.59" width="64.13" height="56.22" transform="translate(0, 0)" data-pref="埼玉"></rect>
+                <rect class="cls-1" x="829.85" y="569.97" height="56.22" transform="translate(0, 0)" d="64.13" data-pref="東京" width="64.13"></rect>
+                <rect class="cls-1" x="763.72" y="569.98" width="64.13" height="85.18" transform="translate(0, 0)" data-pref="神奈川"></rect>
+                <rect class="cls-1" x="631.47" y="569.97" width="64.13" height="56.22" transform="translate(0, 0)" data-pref="愛知"></rect>
+                <rect class="cls-1" x="499.21" y="569.97" width="64.13" height="114.17" transform="translate(0, 0)" data-pref="奈良"></rect>
+                <rect class="cls-1" x="763.72" y="453.53" width="64.13" height="56.22" transform="translate(0, 0)" data-pref="群馬"></rect>
+                <rect class="cls-1" x="763.72" y="511.59" width="64.13" height="56.22" transform="translate(0, 0)" data-pref="山梨"></rect>
+                <rect class="cls-1" x="300.82" y="511.59" width="64.13" height="56.22" transform="translate(0, 0)" data-pref="鳥取"></rect>
+                <rect class="cls-1" x="300.82" y="569.97" width="64.13" height="56.22" transform="translate(0, 0)" data-pref="岡山"></rect>
+                <rect class="cls-1" x="234.69" y="569.97" width="64.13" height="56.22" transform="translate(0, 0)" data-pref="広島"></rect>
+                <rect class="cls-1" x="168.56" y="511.59" width="64.13" height="56.22" transform="translate(0, 0)" data-pref="山口"></rect>
+                <rect class="cls-1" x="234.69" y="511.59" width="64.13" height="56.22" transform="translate(0, 0)" data-pref="島根"></rect>
+                <rect class="cls-1" x="300.82" y="657.03" width="64.13" height="56.22" transform="translate(0, 0)" data-pref="香川"></rect>
+                <rect class="cls-1" x="300.82" y="715.41" width="64.13" height="56.22" transform="translate(0, 0)" data-pref="徳島"></rect>
+                <rect class="cls-1" x="234.69" y="715.41" width="64.13" height="56.22" transform="translate(0, 0)" data-pref="高知"></rect>
+                <rect class="cls-1" x="0"       y="831.85" width="64.13" height="56.22" transform="translate(0, 0)" data-pref="沖縄"></rect>
+                <rect class="cls-1" x="234.69" y="657.03" width="64.13" height="56.22" transform="translate(0, 0)" data-pref="愛媛"></rect>
+                <rect class="cls-1" x="135.5" y="598.73" width="64.13" height="56.22" transform="translate(0, 0)" data-pref="福岡"></rect>
+                <rect class="cls-1" x="135.5" y="657.11" width="64.13" height="56.22" transform="translate(0, 0)" data-pref="大分"></rect>
+                <rect class="cls-1" x="69.37" y="657.11" width="64.13" height="56.22" transform="translate(0, 0)" data-pref="佐賀"></rect>
+                <rect class="cls-1" x="135.5" y="715.41" width="64.13" height="56.22" transform="translate(0, 0)" data-pref="宮城"></rect>
+                <rect class="cls-1" x="69.37" y="715.41" width="64.13" height="56.22" transform="translate(0, 0)" data-pref="熊本"></rect>
+                <rect class="cls-1" x="69.37" y="598.73" width="64.13" height="56.22" transform="translate(0, 0)" data-pref="長崎"></rect>
+                <rect class="cls-1" x="433.08" y="569.97" width="64.13" height="114.17" transform="translate(0, 0)" data-pref="大阪"></rect>
+                <rect class="cls-1" x="433.08" y="511.59" width="97.19" height="56.22" transform="translate(0, 0)" data-pref="京都"></rect>
+                <rect class="cls-1" x="895.98" y="453.53" width="64.13" height="114.44" transform="translate(0, 0)" data-pref="茨城"></rect>
+                <rect class="cls-1" x="697.59" y="453.53" width="64.13" height="114.44" transform="translate(0, 0)" data-pref="長野"></rect>
+                <rect class="cls-1" x="697.6" y="569.98" width="64.13" height="85.18" transform="translate(0, 0)" data-pref="静岡"></rect>
+                <rect class="cls-1" x="366.95" y="511.75" width="64.13" height="114.44" transform="translate(0, 0)" data-pref="兵庫"></rect>
+                <rect class="cls-1" x="565.34" y="569.98" width="64.13" height="172.54" transform="translate(0, 0)" data-pref="三重"></rect>
+                <rect class="cls-1" x="565.34" y="337.09" width="64.13" height="114.44" transform="translate(0, 0)" data-pref="石川"></rect>
+                <rect class="cls-1" x="631.47" y="453.53" width="64.13" height="114.44" transform="translate(0, 0)" data-pref="岐阜"></rect>
+                <rect class="cls-1" x="895.98" y="569.97" width="64.13" height="114.44" transform="translate(0, 0)" data-pref="千葉"></rect>
+                <rect class="cls-1" x="763.72" y="395.31" width="130.26" height="56.22" transform="translate(0, 0)" data-pref="新潟"></rect>
+                <rect class="cls-1" x="631.47" y="395.31" width="130.26" height="56.22" transform="translate(0, 0)" data-pref="富山"></rect>
+                <rect class="cls-1" x="433.08" y="686.14" width="130.26" height="56.22" transform="translate(0, 0)" data-pref="和歌山"></rect>
+                <rect class="cls-1" x="102.43" y="773.63" width="97.19" height="56.22" transform="translate(0, 0)" data-pref="鹿児島"></rect>
+                <rect class="cls-1" x="532.27" y="453.53" width="97.19" height="56.22" transform="translate(0, 0)" data-pref="福井"></rect>
+                <rect class="cls-1" x="532.27" y="511.59" width="97.19" height="56.22" transform="translate(0, 0)" data-pref="滋賀"></rect>
             </g>
         </svg>
     </div>
@@ -145,98 +93,109 @@
 
         <div class="form-wrap">
             <form action="detail.html" method="get">
-                <div class="select">
-                    <select class="select__place" name="prefCode"> <!-- 後で地図に変える-->
-                        <option value="1">北海道</option>
-                        <option value="2">青森県</option>
-                        <option value="3">岩手県</option>
-                        <option value="4">宮城県</option>
-                        <option value="5">秋田県</option>
-                        <option value="6">山形県</option>
-                        <option value="7">福島県</option>
-                        <option value="8">茨城県</option>
-                        <option value="9">栃木県</option>
-                        <option value="10">群馬県</option>
-                        <option value="11">埼玉県</option>
-                        <option value="12">千葉県</option>
-                        <option value="13">東京都</option>
-                        <option value="14">神奈川県</option>
-                        <option value="15">新潟県</option>
-                        <option value="16">富山県</option>
-                        <option value="17">石川県</option>
-                        <option value="18">福井県</option>
-                        <option value="19">山梨県</option>
-                        <option value="20">長野県</option>
-                        <option value="21">岐阜県</option>
-                        <option value="22">静岡県</option>
-                        <option value="23">愛知県</option>
-                        <option value="24">三重県</option>
-                        <option value="25">滋賀県</option>
-                        <option value="26">京都府</option>
-                        <option value="27">大阪府</option>
-                        <option value="28">兵庫県</option>
-                        <option value="29">奈良県</option>
-                        <option value="30">和歌山県</option>
-                        <option value="31">鳥取県</option>
-                        <option value="32">島根県</option>
-                        <option value="33">岡山県</option>
-                        <option value="34">広島県</option>
-                        <option value="35">山口県</option>
-                        <option value="36">徳島県</option>
-                        <option value="37">香川県</option>
-                        <option value="38">愛媛県</option>
-                        <option value="39">高知県</option>
-                        <option value="40">福岡県</option>
-                        <option value="41">佐賀県</option>
-                        <option value="42">長崎県</option>
-                        <option value="43">熊本県</option>
-                        <option value="44">大分県</option>
-                        <option value="45">宮崎県</option>
-                        <option value="46">鹿児島県</option>
-                        <option value="47">沖縄県</option>
-                    </select>
+                <div class="form__box form__box--region">
+                    <div class="select">
+                        <p class="prefName" id="prefName"></p>
+                        <input type="hidden" name="prefCode" id="prefCode" />
+                        <!-- <select class="select__box select__place" name="prefCode">
+                            <option value="1">北海道</option>
+                            <option value="2">青森県</option>
+                            <option value="3">岩手県</option>
+                            <option value="4">宮城県</option>
+                            <option value="5">秋田県</option>
+                            <option value="6">山形県</option>
+                            <option value="7">福島県</option>
+                            <option value="8">茨城県</option>
+                            <option value="9">栃木県</option>
+                            <option value="10">群馬県</option>
+                            <option value="11">埼玉県</option>
+                            <option value="12">千葉県</option>
+                            <option value="13">東京都</option>
+                            <option value="14">神奈川県</option>
+                            <option value="15">新潟県</option>
+                            <option value="16">富山県</option>
+                            <option value="17">石川県</option>
+                            <option value="18">福井県</option>
+                            <option value="19">山梨県</option>
+                            <option value="20">長野県</option>
+                            <option value="21">岐阜県</option>
+                            <option value="22">静岡県</option>
+                            <option value="23">愛知県</option>
+                            <option value="24">三重県</option>
+                            <option value="25">滋賀県</option>
+                            <option value="26">京都府</option>
+                            <option value="27">大阪府</option>
+                            <option value="28">兵庫県</option>
+                            <option value="29">奈良県</option>
+                            <option value="30">和歌山県</option>
+                            <option value="31">鳥取県</option>
+                            <option value="32">島根県</option>
+                            <option value="33">岡山県</option>
+                            <option value="34">広島県</option>
+                            <option value="35">山口県</option>
+                            <option value="36">徳島県</option>
+                            <option value="37">香川県</option>
+                            <option value="38">愛媛県</option>
+                            <option value="39">高知県</option>
+                            <option value="40">福岡県</option>
+                            <option value="41">佐賀県</option>
+                            <option value="42">長崎県</option>
+                            <option value="43">熊本県</option>
+                            <option value="44">大分県</option>
+                            <option value="45">宮崎県</option>
+                            <option value="46">鹿児島県</option>
+                            <option value="47">沖縄県</option>
+                        </select> -->
+                    </div>
                 </div>
-                <div class="select">
-                    <select class="select__age" name="wagesAge">
-                        <option value="2">~ 19歳</option>
-                        <option value="3">20～24歳</option>
-                        <option value="4">25～29歳</option>
-                        <option value="5">30～34歳</option>
-                        <option value="6">35～39歳</option>
-                        <option value="7">40～44歳</option>
-                        <option value="8">45～49歳</option>
-                        <option value="9">50～54歳</option>
-                        <option value="10">55～59歳</option>
-                        <option value="11">60～64歳</option>
-                        <option value="12">65～69歳</option>
-                        <option value="13">70歳～</option>
-                    </select>
+                <div class="form__box form__box--conditions">
+                    <!-- <p class="form__box__text">あなたの</p> -->
+                    <div class="select">
+                        <p class="select__text">年齢は？</p>
+                        <select class="select__box select__age" name="wagesAge">
+                            <option value="2">~ 19歳</option>
+                            <option value="3">20～24歳</option>
+                            <option value="4">25～29歳</option>
+                            <option value="5">30～34歳</option>
+                            <option value="6">35～39歳</option>
+                            <option value="7">40～44歳</option>
+                            <option value="8">45～49歳</option>
+                            <option value="9">50～54歳</option>
+                            <option value="10">55～59歳</option>
+                            <option value="11">60～64歳</option>
+                            <option value="12">65～69歳</option>
+                            <option value="13">70歳～</option>
+                        </select>
+                    </div>
+                    <div class="select">
+                        <p class="select__text">業種は？</p>
+                        <select class="select__box select__ctg" name="sicCode">
+                            <option value="G">情報通信業</option>
+                            <option value="B">漁業</option>
+                            <option value="C">鉱業，採石業，砂利採取業</option>
+                            <option value="D">建設業</option>
+                            <option value="E">製造業</option>
+                            <option value="F">電気・ガス・熱供給・水道業</option>
+                            <option value="H">運輸業，郵便業</option>
+                            <option value="I">卸売業，小売業</option>
+                            <option value="J">金融業，保険業</option>
+                            <option value="K">不動産業，物品賃貸業</option>
+                            <option value="L">学術研究，専門・技術サービス業</option>
+                            <option value="M">宿泊業，飲食サービス業</option>
+                            <option value="N">生活関連サービス業，娯楽業</option>
+                            <option value="O">教育，学習支援業</option>
+                            <option value="P">医療，福祉</option>
+                            <option value="Q">複合サービス事業</option>
+                            <option value="R">サービス業（他に分類されないもの）</option>
+                            <option value="S">公務（他に分類されるものを除く）</option>
+                            <option value="T">分類不能の産業</option>
+                        </select>
+                    </div>
                 </div>
-                <div class="select">
-                    <select class="select__ctg" name="sicCode">
-                    <option value="G">情報通信業</option>
-                    <option value="B">漁業</option>
-                    <option value="C">鉱業，採石業，砂利採取業</option>
-                    <option value="D">建設業</option>
-                    <option value="E">製造業</option>
-                    <option value="F">電気・ガス・熱供給・水道業</option>
-                    <option value="H">運輸業，郵便業</option>
-                    <option value="I">卸売業，小売業</option>
-                    <option value="J">金融業，保険業</option>
-                    <option value="K">不動産業，物品賃貸業</option>
-                    <option value="L">学術研究，専門・技術サービス業</option>
-                    <option value="M">宿泊業，飲食サービス業</option>
-                    <option value="N">生活関連サービス業，娯楽業</option>
-                    <option value="O">教育，学習支援業</option>
-                    <option value="P">医療，福祉</option>
-                    <option value="Q">複合サービス事業</option>
-                    <option value="R">サービス業（他に分類されないもの）</option>
-                    <option value="S">公務（他に分類されるものを除く）</option>
-                    <option value="T">分類不能の産業</option>
-                </select>
-                </div>
-                <div class="btn">
-                    <input class="start" type="submit" value="START"></input>
+                <div class="form__box form__box--start">
+                    <div class="btn">
+                        <input class="start" type="submit" value="START"></input>
+                    </div>
                 </div>
             </form>
         </div>
