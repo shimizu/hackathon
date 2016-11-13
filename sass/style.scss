@@ -205,7 +205,6 @@ input[type="search"]::-webkit-search-decoration {
         position: relative;
 
         .text__body {
-            background: $color_background;
             padding-right: 0.5em;
             display: inline-block;
             @include font-family-japan(bold, true);
