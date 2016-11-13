@@ -136,7 +136,7 @@ var index = {
             map
             .transition()
             .duration(1000)
-            .attr("transform", "translate(0, 250)")
+            .attr("transform", "translate(0, 300)")
         })
 
     },
