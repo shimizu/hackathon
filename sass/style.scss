@@ -484,6 +484,7 @@ input[type="search"]::-webkit-search-decoration {
                 color: $color_text;
                 font-size: 16px;
                 @include font-family-japan(bold,true);
+                height: 58px;
             }
             .table__value {
                 padding: 0.3em;
