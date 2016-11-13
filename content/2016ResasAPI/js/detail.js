@@ -2,6 +2,14 @@
     "use strict"
     console.log("load detail.js")
     
+    const cast = function(d){
+        Object.keys(d).forEach(function(key){
+            if(!isNaN(+d[key])) d[key] = +d[key]
+        })
+        
+        return d
+    }
+    
     const key ="laIipCFynb2CgaT7SnJ1c1QxN0LCB9b31AvLM5nO"
     const dataDir = "./data/"
     
@@ -20,7 +28,7 @@
     loadTaxes()
     loadJob()
     loadFoundation()
-    
+    loadSpend()
     
     
     
@@ -96,6 +104,17 @@
          
         api.send()        
         
+    }
+    
+    
+    //年間支出
+    function loadSpend() {
+        d3.tsv(dataDir+"kakei.tsv", cast, function(d){
+            
+            
+            
+            
+        })
     }
     
     
