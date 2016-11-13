@@ -119,6 +119,16 @@
             var value = (nested.get(param.prefCode))["消費者物価指数"]
             d3.select("#cpi").text(value)
 
+            var sorted_data = d.sort(function(a, b){
+              var ad = 0, bd = 0;
+              if(a) ad = a['消費者物価指数'];
+              if(b) bd = b['消費者物価指数'];
+              return ad - bd;
+            });
+
+            var rank = findWithAttr(sorted_data, '県コード', parseInt(param.prefCode)) + 1;
+            console.log(rank);
+            d3.select("#cpi_rank").text(rank + ' / 47');
         })
     }
 
