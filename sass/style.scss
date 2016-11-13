@@ -223,7 +223,7 @@ input[type="search"]::-webkit-search-decoration {
         }
 
         &:before {
-            @include pseudo-element(calc(100% - 279px), 1px);
+            @include pseudo-element(calc(100% - 369px), 1px);
             background: $color_text;
             @include abs-position(0,0,auto,auto);
             margin-top: 0.7em;
@@ -394,6 +394,7 @@ input[type="search"]::-webkit-search-decoration {
             margin: -20px auto;
             background: #fff;
             @include prefix(transform, rotate(45deg));
+            z-index: -1;
         }
     }
     &__data {
@@ -453,37 +454,48 @@ input[type="search"]::-webkit-search-decoration {
 
 .main__sub-data {
     width: 83.333%;
-    max-width: 600px;
+    //max-width: 600px;
     color: $color_text;
     margin: 2em auto 0;
 
-    .sub-data__answer {
-        font-size: 24px;
-        text-align: center;
-        @include font-family-japan(bold,true);
+    .sub-data__wrap {
+        width:47.5%;
+        float: left;
+        margin-right: 5%;
 
-    }
-    .sub-data__table {
-        width: 100%;
-        border: 1px solid $color_text;
-        padding: 1.5em 50px;
-        margin: 1em 0 2em;
+        &:last-child {
+            margin-right: 0;
+        }
 
-        .table__ctg {
-            padding: 0.3em;
-            color: $color_text;
-            font-size: 16px;
+        .sub-data__answer {
+            font-size: 24px;
+            text-align: center;
             @include font-family-japan(bold,true);
+
         }
-        .table__value {
-            padding: 0.3em;
-            font-size: 28px;
-            text-align: right;
-            color: $color_main;
-            letter-spacing: .05em;
-            @include font-family-euro(normal,false);
+        .sub-data__table {
+            width: 100%;
+            border: 1px solid $color_text;
+            padding: 1.5em 35px;
+            margin: 1em 0 2em;
+
+            .table__ctg {
+                padding: 0.3em;
+                color: $color_text;
+                font-size: 16px;
+                @include font-family-japan(bold,true);
+            }
+            .table__value {
+                padding: 0.3em;
+                font-size: 28px;
+                text-align: right;
+                color: $color_main;
+                letter-spacing: .05em;
+                @include font-family-euro(normal,false);
+            }
         }
     }
+    @include clearfix;
 }
 .zoom {
     width: auto;
@@ -512,7 +524,7 @@ input[type="search"]::-webkit-search-decoration {
 .form-wrap {
     width: 60%;
     max-width: 600px;
-    margin: 20px auto;
+    margin: 40px auto;
 
     .form__box {
         width: 100%;
@@ -529,6 +541,12 @@ input[type="search"]::-webkit-search-decoration {
 }
 //select-box共通
 .select {
+    .prefName {
+        color: $color_text;
+        @include font-family-japan(bold, true);
+        font-size: 32px;
+        text-align: center;
+    }
     &__box {
         width: 100%;
         background: #fff;
@@ -543,8 +561,16 @@ input[type="search"]::-webkit-search-decoration {
     }
     &__text {
         color: $color_text;
-        font-size: 24px;
+        font-size: 18px;
+        text-align: left;
         @include font-family-japan(bold, true);
+        position: relative;
+        // &:after {
+        //     @include pseudo-element(7em, 1px);
+        //     background: $color_text;
+        //     @include abs-position(0,0,0,auto);
+        //     margin: auto;
+        // }
     }
 }
 
