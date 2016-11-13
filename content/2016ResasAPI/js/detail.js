@@ -29,6 +29,7 @@
     loadJob()
     loadFoundation()
     loadSpend()
+    loadRent()
     
     
     
@@ -120,7 +121,21 @@
             
         })
     }
-    
+
+
+    //借家平均家賃    
+    function loadRent() {
+        d3.tsv(dataDir+"shakuya.tsv", cast, function(d){
+            var nested = d3.nest()
+                .rollup(function(d){ return d[0] })
+                .key(function(d){ return d["県コード"]})
+                .map(d)
+                
+            var value = (nested.get(param.prefCode))["借家平均家賃"]    
+            d3.select("#rent").text(value)
+            
+        })
+    }
     
     function getParameterByName(name, url) {
         if (!url) {
