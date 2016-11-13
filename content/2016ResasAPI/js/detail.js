@@ -30,7 +30,7 @@
     loadFoundation()
     loadSpend()
     loadRent()
-    
+    loadRegular()
     
     
     //一人当たり賃金データのロード
@@ -122,6 +122,7 @@
     }
 
 
+
     //借家平均家賃    
     function loadRent() {
         d3.tsv(dataDir+"shakuya.tsv", cast, function(d){
@@ -135,6 +136,22 @@
             
         })
     }
+    
+    //正規雇用比率
+    function loadRegular() {
+        d3.tsv(dataDir+"jobs.tsv", cast, function(d){
+            var nested = d3.nest()
+                .rollup(function(d){ return d[0] })
+                .key(function(d){ return d["県コード"]})
+                .map(d)
+                
+            var value = (nested.get(param.prefCode))["非正規雇用比率"]
+            console.log(value)
+            d3.select("#regular").text(d3.format(".2f")(value))
+            
+        })
+    }
+    
     
     function getParameterByName(name, url) {
         if (!url) {
