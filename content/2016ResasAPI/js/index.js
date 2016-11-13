@@ -102,6 +102,9 @@ var index = {
         rects.on("click", function(){
             rect = d3.select(this)
 
+            rects.attr('opacity', '.5')
+            rect.attr('opacity', '1')
+
             var x = +rect.attr("x")
             var y = +rect.attr("y")
             var w = +rect.attr("width")
@@ -130,6 +133,7 @@ var index = {
             .transition()
             .duration(1000)
             .attr("transform", 'translate(0, 0)')
+            .attr('opacity', '1')
 
 
             map
