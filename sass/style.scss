@@ -362,8 +362,8 @@ input[type="search"]::-webkit-search-decoration {
         @include abs-position(0,0,0,0);
         margin: auto;
         //仮
-        width: 40%;
-        height: 464px;
+        // width: 40%;
+        // height: 464px;
     }
     &__balloon {
         width: 100%;
