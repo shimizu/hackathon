@@ -498,6 +498,11 @@ input[type="search"]::-webkit-search-decoration {
                     font-size: 14px;
                     display: inline-block;
                 }
+                .value__rank {
+                    font-size: 13px;
+                    margin-top: 0.5em;
+                    letter-spacing: 0;
+                }
             }
         }
     }
