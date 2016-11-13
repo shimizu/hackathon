@@ -205,7 +205,6 @@ input[type="search"]::-webkit-search-decoration {
         position: relative;
 
         .text__body {
-            background: $color_background;
             padding-right: 0.5em;
             display: inline-block;
             @include font-family-japan(bold, true);
@@ -478,7 +477,7 @@ input[type="search"]::-webkit-search-decoration {
         }
     }
 }
-.zoom-off {
+.zoom {
     width: 90%;
     margin: 0 auto;
     text-align: right;
@@ -486,26 +485,88 @@ input[type="search"]::-webkit-search-decoration {
     top: 150px;
     z-index: 3;
     //display: none;
+
+    &__btn {
+        display: none;
+        background: none;
+        border: 2px solid $color_text;
+        padding: 0.5em 0.7em;
+        border-radius: 5px;
+        font-size: 14px;
+        color: $color_text;
+
+    }
 }
 
 // form
 //--------------------------------------------------------
 .form-wrap {
-    width: 83.333%;
+    width: 60%;
     margin: 20px auto;
-}
-.select {
-    width: 50%;
 
-    &__place,
-    &__age,
-    &__ctg {
+    .form__box {
+        width: 100%;
+        margin-top: 20px;
+        &:first-child {
+            margin-top: 0;
+        }
+
+        &--region {
+            .select__box {
+                background: none;
+                border: none;
+                text-align: center;
+                color: $color_text;
+            }
+        }
+    }
+}
+//select-box共通
+.select {
+    &__box {
         width: 100%;
         background: #fff;
-        border-radius: 0;
-        padding: 0.5em;
+        border-radius: 5px;
+        padding: 0.7em 1em;
         -webkit-appearance: none;
     	-moz-appearance: none;
     	appearance: none;
+        border: 2px solid $color_text;
+        color: $color_text;
+    }
+}
+.form__box--conditions {
+    width: 100%;
+    .select {
+        width: 47.5%;
+        margin-right: 5%;
+        float: left;
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+    @include clearfix;
+}
+.form__box--start {
+    width: 100%;
+    margin-top: 20px;
+    .btn {
+        background: $color_main;
+        border-radius: 10px;
+        border: none;
+        text-align: center;
+        color: #fff;
+
+        .start {
+            background: none;
+            border: none;
+            color: #fff;
+            font-size: 24px;
+            letter-spacing: 0.1em;
+            text-align: center;
+            width: 100%;
+            padding: 1em 1.2em;
+            @include font-family-euro(bold, true);
+        }
     }
 }
