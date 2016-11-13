@@ -292,6 +292,7 @@ input[type="search"]::-webkit-search-decoration {
         width: calc(95% - 280px);
         margin: 40px 5% 0 auto;
         z-index: 1;
+        pointer-events: none;
     }
     @include clearfix;
 }
