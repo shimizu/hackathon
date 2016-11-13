@@ -9,3 +9,5 @@ ehthumbs.db
 *.conf.tmp
 
 **/css/
+
+*.css
