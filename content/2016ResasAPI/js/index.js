@@ -63,6 +63,7 @@ var index = {
     },
     mapClickEvent: function() {
         var $map = $('.main__map');
+        var $zoomOff = $('#zoom-off');
         var $balloon =$('.main__balloon');
         var $form = $('.form-wrap');
         var defSize = $balloon.height();
@@ -71,6 +72,11 @@ var index = {
             $balloon.height(wh/2 - 40);
             $('.balloon__text').fadeOut('200');
             $form.addClass('form-wrap--active');
+        });
+        $zoomOff.click(function(event) {
+            $balloon.height(defSize);
+            $('.balloon__text').fadeIn('200');
+            $form.removeClass('form-wrap--active');
         });
     },
     mapZoom: function () {
